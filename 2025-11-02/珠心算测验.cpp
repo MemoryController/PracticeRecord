@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-int buk[100][100],num,arr[100],cnt;
+long long vis[(int)1e5 + 10];
+long long arr[(int)1e5 + 10];
+int num;
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -9,29 +11,23 @@ int main(){
     for(int i=0; i<num; i++){
         cin>>arr[i];
     }
-    // 求和放入buk中
-    for(int i=0; i<num-1; i++){
-        for(int j=i+1; j<num;j++){
-            buk[i][j] = arr[i]+arr[j];
-        }
+    for(int i =0;i<num; i++){
+        vis[arr[i]] = 1; // 相当于数组的逆映射 因为数字没有重复出现
     }
-    // 寻找相同的
-    bool found = false;
-    for(int k=0; k<num; k++){
-        found = false;
-        for(int i=0; i<num-1; i++){
-            for(int j=i+1; j<num;j++){
-                if(buk[i][j]==arr[k]){
-                    cnt++;
-                    found = true;
-                    break;
-                }
+    long long ans =0;
+    for(int i=0; i<num;i++){
+        bool ok = 0;
+        for(int j=0; j<num; j++){
+            if(arr[i] - arr[j]>0 && vis[arr[i] - arr[j]] && arr[i] != 2*arr[j]){
+                ok = 1;
             }
-            if(found) break;
         }
-    }
+        ans += ok;
 
-    cout<<cnt<<'\n';
+    }
+    
+
+    cout<<ans<<'\n';
 
 
 
