@@ -13,14 +13,19 @@ int main(){
         pre_count[2][i] = 0;
     }
     for(int i=1; i<=n; i++){
-        int target = str[i-1]-'1';
-        for(int j=0;j<3;j++){
-            if(target==j){
-                pre_count[j][i] = pre_count[j][i-1] + 1;
-            }else{
-                pre_count[j][i] = pre_count[j][i-1];
-            }
-        }
+        // int target = str[i-1]-'1';
+        // for(int j=0;j<3;j++){
+        //     // if(target==j){
+        //     //     pre_count[j][i] = pre_count[j][i-1] + 1;
+        //     // }else{
+        //     //     pre_count[j][i] = pre_count[j][i-1];
+        //     // }
+            
+        // }
+        
+        pre_count[0][i] = pre_count[0][i-1] + (str[i-1] == 0);
+        pre_count[1][i] = pre_count[1][i-1] + (str[i-1] == 1);
+        pre_count[2][i] = pre_count[2][i-1] + (str[i-1] == 2);
   
     }
     
