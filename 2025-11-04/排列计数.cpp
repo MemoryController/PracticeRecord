@@ -29,7 +29,7 @@ int main(){
                     ans = ans * cnt % MOD; // 遍历过去就相当于求排列数了
                     cnt--;
                 }else{
-                    cnt = cnt + prefix[i-1] - prefix[i] -1;
+                    cnt = cnt + prefix[i-1] - prefix[i] -1; //第一段小区间剩下的数字名额 加上 下一段小区间多的数字名额
                 }
 
             }
