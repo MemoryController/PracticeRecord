@@ -7,7 +7,7 @@ typedef long long ll;
 
 ll n,m,period[2][N],last_ans=INF;
 ll pre1[N],pre2[N],ans=INF,s,arr[2][N],max_weight=0,min_weight=INF; //条件前缀和 一个是重量，另一个是价格
-int main(){
+int main(){ //有个用例超时
     ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
     
     cin>>n>>m>>s;
