@@ -2,7 +2,7 @@
 using namespace std;
 
 typedef long long ll;
-const int INF = 0x3f3f3f3f3f3f3f3f;
+const ll INF = 0x3f3f3f3f3f3f3f3f;
 const int N = 4e6+10;
 
 ll arr[N],diff[N],num,h,pre[N]; // arr每个元素代表一行的个数
