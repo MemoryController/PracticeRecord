@@ -15,38 +15,15 @@ int main(){
     for(ll i=1;i<=num;i++){
         ll left=1,mid,right=length,target,idx=-1;
         cin>>target;
-        if(target == arr[left]){
-            idx=left;
-        }else if(target == arr[right]){
-            idx=right;
-        }else{
-            while(right - left > 1){
-                // 循环进行二分查找 这样只能保证有，不能保证是第一个 但是边界位置找不到
-                mid = (right+left)/2;
-                bool changed = false;
-                if(arr[mid]>target){
-                    right = mid;
-                }else if(arr[mid]<target){
-                    left=mid;
-                }else{
-                    idx = mid;
-                    break;
-                }
-            }
+        while (left < right) {
+            //“第一次出现的位置”就等价于“第一个大于等于目标值且等于目标值的元素下标”
+            mid = left + ((right - left) >> 1);
+            if (arr[mid] >= target) right = mid;
+            else left = mid + 1;
         }
-        
-        if(idx != -1){
-            //去找第一个相同的
-            while(arr[idx-1] == target){
-                idx--;
-            }
-        }
+        if (arr[left] == target) idx = left;
         cout<<idx<<' ';
     }
     cout<<'\n';
-    
-
-
-
     return 0;
 }
