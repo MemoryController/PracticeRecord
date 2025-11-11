@@ -25,7 +25,7 @@ int main(){
     }
     //在[1,min(n,m)]中二分找最大边长
     // 如果区间中点符合要求则归左， 不符合要求则归右， 最后拿l的值
-    int l=1,r=min(m,n),mid;
+    int l=1,r=min(m,n)+1,mid;
     while(r - l != 1){
         bool ok = false;
         mid = (l+r) >> 1;

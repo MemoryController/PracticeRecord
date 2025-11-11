@@ -3,7 +3,7 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ull;
-const ll INF = 0x3f3f3f3f3f3f3f3f3f3f;
+const ll INF = 0x3f3f3f3f3f3f3f3f;
 const int N = 2e5+10;
 // 依旧二分 不想弄了 超时一个 不想改二分了
 
