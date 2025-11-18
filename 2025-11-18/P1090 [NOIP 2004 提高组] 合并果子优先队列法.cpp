@@ -24,8 +24,8 @@ void solve(){
         ll a,b;
         a = pq.top();
         pq.pop();
-        b = pq.top();
-        pq.pop();
+        b = pq.top(); // O(n)
+        pq.pop(); // O(logn)
         pq.push(a+b);
         ans += a+b;
     }
