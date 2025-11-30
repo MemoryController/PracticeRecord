@@ -11,7 +11,7 @@ ll vis[15][15]; // 应当为计数，因为某些位置重复标记，需要逐�
 vector<int> res;
 int num;
 ll ans = 0;
-// 防止对角线有 即 防止横纵坐标差的绝对值相等 即用树的层级和当前位置作差的绝对值
+
 void dfs(int row){
     if(row>num){ // 递归终止条件
         ans++;
