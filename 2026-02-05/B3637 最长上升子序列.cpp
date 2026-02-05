@@ -15,7 +15,6 @@ void solve(){
         dp[i] = 1;
     }
     for(int i=2;i<=n;i++){
-        int max_idx = -1,max_value=0;
         for(int j=1;j<i;j++){
             if(arr[j]<arr[i]){
                 dp[i] = max(dp[j]+1,dp[i]);
