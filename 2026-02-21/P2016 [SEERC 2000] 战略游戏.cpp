@@ -36,9 +36,6 @@ void solve(){
     dfs(0,-1);
     int ans = 1;
     ans = min(dp[0][0],dp[0][1]);
-    if(n==1){
-        ans = 1;
-    }
     cout<<ans<<'\n';
 
 }
