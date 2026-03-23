@@ -4,51 +4,30 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 const ll INF = 0x3f3f3f3f3f3f3f3f;
-const int N = 1e3 + 10;
+const ll MOD = 1000000007;
+const int N = 1e5 + 10;
 typedef pair<int, int> pii;
 typedef pair<double, double> pdd;
 
-int n,m,a[N],b[N],c[N];
 ll ans = 0;
+bool check(ll p){
+    return ((p-45)%10==0 && p<=20255202);
+}
 void solve(){
-    cin >> n;
-    for(int i=0;i<n;i++){
-        cin >> a[i];
-    }
-    for(int i=0;i<n;i++){
-        cin >> b[i];
-    }
-    for(int i=0;i<n;i++){
-        cin >> c[i];
-    }
-    cin >> m;
-    int A=0,B=0,C=0;
-    while(m--){
-        int da,db,dc;
-        cin>>da>>db>>dc;
-        A += da;
-        B += db;
-        C += dc;
-        A%=n;B%=n;C%=n;
-        int x,y,z;
-        x = a[A];
-        y = b[B];
-        z = c[C];
-        int sum = x+y+z;
-        if (x==y && y==z){
-            ans += 200;
-        }else if(x+1==y && y+1==z){
-            ans += 200;
-        }else if(x==y || y==z || x==z){
-            ans += 100;
-        }else if((x+1==y && y+1==z) || (y+1==x && x+1==z) || (y+1==z && z+1==x) || (x+1==z && z+1==y) || (z+1==x && x+1==y) || (z+1==y && y+1==x)){
-            ans += 100;
+    for(int n=2;n<=8;n++){
+        for(int i=1;i<=9;i++){
+            int p=0,idx=1;
+            for(int j=0;j<n;j++){
+                p += idx * i;
+                idx *= 10;
+
+            }
+            if(check(p)){
+                ans += p;
+            }
         }
     }
     cout<<ans<<'\n';
-
-
-
 
 
 }
